@@ -1,12 +1,12 @@
 import random
 import matplotlib.pyplot as plt
 
-N = 10
-l1 = 1.1
+N = 10             # number of ants
+l1 = 1.1           # regularisation
 l2 = 1.5
 ru = 0.05
-Q = 1
-tau1 = 0.5
+Q = 1              # quality of solution
+tau1 = 0.5         # pheromone trials
 tau2 = 0.5
 
 samples = 10
@@ -14,6 +14,8 @@ epochs = 150
 
 success = [0 for x in range(epochs)]
 
+
+# relative intensities of the pheromone trails.
 def compute_probability(tau1, tau2):
     return tau1/(tau1 + tau2), tau2/(tau1 + tau2)
 
@@ -73,5 +75,6 @@ for x in success:
     print(-x)
 
 print(report_results(success))
+plt.savefig('ACO.png')
 
-
+"// parameters in antcolony optimization?"     
