@@ -18,9 +18,11 @@ success = [0 for x in range(epochs)]
 # relative intensities of the pheromone trails.
 def compute_probability(tau1, tau2):
     return tau1/(tau1 + tau2), tau2/(tau1 + tau2)
+  
 
 def weighted_random_choice(choices):
     max = sum(choices.values())
+    print(max)
     pick = random.uniform(0, max)
     current = 0
     for key, value in choices.items():
@@ -74,7 +76,7 @@ success = [x / samples for x in success]
 for x in success:
     print(-x)
 
-print(report_results(success))
-plt.savefig('ACO.png')
+#print(report_results(success))
+# plt.savefig('ACO.png')
 
-"// parameters in antcolony optimization?"     
+"// parameters in antcolony optimization?"
